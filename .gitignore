@@ -1,0 +1,14 @@
+__pycache__/
+
+# Temp files
+*~
+~*
+.*~
+\#*
+.#*
+*#
+
+# Mac OS
+.DS_Store
+.AppleDouble
+.LSOverride
