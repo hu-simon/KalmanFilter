@@ -86,6 +86,7 @@ int main(int argc, char *argv[]) {
     for (unsigned int i = 0; i < noisy_measurements.size(); i++) {
         t += dt;
         y << noisy_measurements[i];
+        kf.predict();
         kf.update(y);
         std::cout << "t = " << t << ", "
                   << "y[" << i << "] = " << y.transpose() << ", x_hat[" << i

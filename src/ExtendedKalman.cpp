@@ -4,6 +4,10 @@
  * Version     :
  * Copyright   : 2020, all rights reserved
  * Description : C++ file containing the logic for the extended Kalman filter
+ *
+ * This entire class needs some more thinking before we can move on with the
+ * design. The reason for this is because we need some way to compute the motion
+ * model.
  */
 
 #include <iostream>
@@ -17,9 +21,11 @@ ExtendedKalmanFilter::ExtendedKalmanFilter(
     const Eigen::MatrixXd &A, const Eigen::MatrixXd &F,
     const Eigen::MatrixXd &B, const Eigen::MatrixXd &C,
     const Eigen::MatrixXd &H, const Eigen::MatrixXd &Q,
-    const Eigen::MatrixXd &R, const Eigen::MatrixXd &P, double dt)
-    : A(A), F(F), B(B), C(C), H(H), Q(Q), R(R), P0(P), m(C.rows()), n(A.rows()),
-      dt(dt), is_initialized(false), I(n, n), x_hat(n), x_hat_new(n), u(n) {
+    const Eigen::MatrixXd &R, const Eigen::MatrixXd &P,
+    const Eigen::MatrixXd &W, const Eigen::MatrixXd &V, double dt)
+    : A(A), F(F), B(B), C(C), H(H), Q(Q), R(R), P0(P), W(W), V(V), m(C.rows()),
+      n(A.rows()), dt(dt), is_initialized(false), I(n, n), x_hat(n),
+      x_hat_new(n), u(n) {
     I.setIdentity(n, n);
 }
 
@@ -35,36 +41,20 @@ void ExtendedKalmanFilter::init() {
     t = t0;
     is_initialized = true;
 }
-void ExtendedKalmanFilter::init(const Eigen::VectorXd &x0,
-                                const Eigen::VectorXd &u, double t0) {
+
+void ExtendedKalmanFilter::init(const Eigen::VectorXd &x0, double dt) {
     x_hat = x0;
-    this->u = u;
+    u.setZero();
     P = P0;
     this->t0 = t0;
     t = t0;
     is_initialized = true;
 }
 
-void ExtendedKalmanFilter::update(const Eigen::VectorXd &u,
-                                  const Eigen::VectorXd &y) {
-    /*
-     * The implementation is going to be like the previous ones, except there is
-     * going to be some sort of derivative term.
-     */
-}
+void ExtendedKalmanFilter::predict() {
+    if (!is_initialized) {
+        throw std::runtime_error("Kalman filter is not initialized!");
+    }
 
-void ExtendedKalmanFilter::update(const Eigen::VectorXd &A,
-                                  const Eigen::VectorXd &F,
-                                  const Eigen::MatrixXd &B,
-                                  const Eigen::MatrixXd &C,
-                                  const Eigen::MatrixXd &H,
-                                  const Eigen::VectorXd &u,
-                                  const Eigen::VectorXd &y, double dt) {
-    this->A = A;
-    this->F = F;
-    this->B = B;
-    this->C = C;
-    this->H = H;
-    this->dt = dt;
-    this->update(u, y);
+    x_hat_new = ;
 }

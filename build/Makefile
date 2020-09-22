@@ -67,10 +67,10 @@ RM = /usr/local/Cellar/cmake/3.18.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/administrator/Documents/Projects/kalman_filter_cpp/src
+CMAKE_SOURCE_DIR = /Users/administrator/Documents/Projects/kalman_filter_cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/administrator/Documents/Projects/kalman_filter_cpp/src/build
+CMAKE_BINARY_DIR = /Users/administrator/Documents/Projects/kalman_filter_cpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/administrator/Documents/Projects/kalman_filter_cpp/src/build/CMakeFiles /Users/administrator/Documents/Projects/kalman_filter_cpp/src/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/administrator/Documents/Projects/kalman_filter_cpp/build/CMakeFiles /Users/administrator/Documents/Projects/kalman_filter_cpp/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/administrator/Documents/Projects/kalman_filter_cpp/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/administrator/Documents/Projects/kalman_filter_cpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -130,125 +130,98 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named kalman-filter
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
+kalman-filter: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kalman-filter
+.PHONY : kalman-filter
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+kalman-filter/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kalman-filter.dir/build.make CMakeFiles/kalman-filter.dir/build
+.PHONY : kalman-filter/fast
 
-BasicKalman.o: BasicKalman.cpp.o
+src/BasicKalman.o: src/BasicKalman.cpp.o
 
-.PHONY : BasicKalman.o
-
-# target to build an object file
-BasicKalman.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/BasicKalman.cpp.o
-.PHONY : BasicKalman.cpp.o
-
-BasicKalman.i: BasicKalman.cpp.i
-
-.PHONY : BasicKalman.i
-
-# target to preprocess a source file
-BasicKalman.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/BasicKalman.cpp.i
-.PHONY : BasicKalman.cpp.i
-
-BasicKalman.s: BasicKalman.cpp.s
-
-.PHONY : BasicKalman.s
-
-# target to generate assembly for a file
-BasicKalman.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/BasicKalman.cpp.s
-.PHONY : BasicKalman.cpp.s
-
-ExtendedKalman.o: ExtendedKalman.cpp.o
-
-.PHONY : ExtendedKalman.o
+.PHONY : src/BasicKalman.o
 
 # target to build an object file
-ExtendedKalman.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ExtendedKalman.cpp.o
-.PHONY : ExtendedKalman.cpp.o
+src/BasicKalman.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kalman-filter.dir/build.make CMakeFiles/kalman-filter.dir/src/BasicKalman.cpp.o
+.PHONY : src/BasicKalman.cpp.o
 
-ExtendedKalman.i: ExtendedKalman.cpp.i
+src/BasicKalman.i: src/BasicKalman.cpp.i
 
-.PHONY : ExtendedKalman.i
+.PHONY : src/BasicKalman.i
 
 # target to preprocess a source file
-ExtendedKalman.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ExtendedKalman.cpp.i
-.PHONY : ExtendedKalman.cpp.i
+src/BasicKalman.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kalman-filter.dir/build.make CMakeFiles/kalman-filter.dir/src/BasicKalman.cpp.i
+.PHONY : src/BasicKalman.cpp.i
 
-ExtendedKalman.s: ExtendedKalman.cpp.s
+src/BasicKalman.s: src/BasicKalman.cpp.s
 
-.PHONY : ExtendedKalman.s
+.PHONY : src/BasicKalman.s
 
 # target to generate assembly for a file
-ExtendedKalman.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ExtendedKalman.cpp.s
-.PHONY : ExtendedKalman.cpp.s
+src/BasicKalman.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kalman-filter.dir/build.make CMakeFiles/kalman-filter.dir/src/BasicKalman.cpp.s
+.PHONY : src/BasicKalman.cpp.s
 
-Kalman.o: Kalman.cpp.o
+src/Kalman.o: src/Kalman.cpp.o
 
-.PHONY : Kalman.o
+.PHONY : src/Kalman.o
 
 # target to build an object file
-Kalman.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Kalman.cpp.o
-.PHONY : Kalman.cpp.o
+src/Kalman.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kalman-filter.dir/build.make CMakeFiles/kalman-filter.dir/src/Kalman.cpp.o
+.PHONY : src/Kalman.cpp.o
 
-Kalman.i: Kalman.cpp.i
+src/Kalman.i: src/Kalman.cpp.i
 
-.PHONY : Kalman.i
+.PHONY : src/Kalman.i
 
 # target to preprocess a source file
-Kalman.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Kalman.cpp.i
-.PHONY : Kalman.cpp.i
+src/Kalman.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kalman-filter.dir/build.make CMakeFiles/kalman-filter.dir/src/Kalman.cpp.i
+.PHONY : src/Kalman.cpp.i
 
-Kalman.s: Kalman.cpp.s
+src/Kalman.s: src/Kalman.cpp.s
 
-.PHONY : Kalman.s
+.PHONY : src/Kalman.s
 
 # target to generate assembly for a file
-Kalman.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Kalman.cpp.s
-.PHONY : Kalman.cpp.s
+src/Kalman.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kalman-filter.dir/build.make CMakeFiles/kalman-filter.dir/src/Kalman.cpp.s
+.PHONY : src/Kalman.cpp.s
 
-main.o: main.cpp.o
+src/main.o: src/main.cpp.o
 
-.PHONY : main.o
+.PHONY : src/main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kalman-filter.dir/build.make CMakeFiles/kalman-filter.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-main.i: main.cpp.i
+src/main.i: src/main.cpp.i
 
-.PHONY : main.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kalman-filter.dir/build.make CMakeFiles/kalman-filter.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-main.s: main.cpp.s
+src/main.s: src/main.cpp.s
 
-.PHONY : main.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kalman-filter.dir/build.make CMakeFiles/kalman-filter.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -258,19 +231,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... main"
-	@echo "... BasicKalman.o"
-	@echo "... BasicKalman.i"
-	@echo "... BasicKalman.s"
-	@echo "... ExtendedKalman.o"
-	@echo "... ExtendedKalman.i"
-	@echo "... ExtendedKalman.s"
-	@echo "... Kalman.o"
-	@echo "... Kalman.i"
-	@echo "... Kalman.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... kalman-filter"
+	@echo "... src/BasicKalman.o"
+	@echo "... src/BasicKalman.i"
+	@echo "... src/BasicKalman.s"
+	@echo "... src/Kalman.o"
+	@echo "... src/Kalman.i"
+	@echo "... src/Kalman.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 
